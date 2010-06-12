@@ -1,0 +1,56 @@
+About
+
+	4x aims to become the new baseline for FoFiX 4.0 theme releases. It's 
+	the first theme available that contains fully functional CustomTheme, 
+	CustomLobby, CustomSetlist, and CustomParts modules. 
+
+	4x also aims to be fast and lightweight. It is approx. 16MB at the time
+	of this writing, whereas many other themes run into the hundreds of megs
+
+
+Features
+
+    RB and GH elements   
+    Graphical Menus      
+    Vocal Graphics       
+    RB2 style setlist    
+    Custom results screen
+    Lobby graphics       
+    3D notes and frets   
+
+
+Screenshots
+
+	You can see screenshots of the theme in action here:
+	http://topclanz.net/blog/4x-fofix-4-0-theme/
+
+
+Notice
+
+	If you want a bug fixed, put it here: http://github.com/fuzion/4x/issues
+
+
+Shouts
+
+	Thanks to the FoFiX team for all of their work and patience.
+
+
+Optional
+
+1. Temporary Vocal Rockmeter Fix
+
+	If you use a mic, you'll need to replace the various rockmeter.ini files 
+	with their vocal compatible versions from the optional folder. These 
+	won't show your score while playing. This will be fixed later.
+
+
+2. 3D Notes
+
+	If you have issues with stuttering or song intro lag, try using the lq_notes.
+
+
+Misc
+
+	#TODO Shaders, Alternate color schemes
+
+	Source will be made available when FoFiX 4.0 gets a tagged release.
