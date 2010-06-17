@@ -49,9 +49,9 @@ Optional
 	If you have issues with stuttering or song intro lag, try using the optional\sq_notes instead.
 
 
-4. Shader Tails
+4. Shader Tails (RB2 Mode)
 	
-	Copy optional/overdrive fill.png to the root folder to enable shader tails. This will enable RB2 mode and disable starpower shaders.
+	Copy the contents of optional/RB2 Mode to the root folder to enable shader tails. This will enable RB2 mode and disable starpower shaders.
 
 
 Misc
