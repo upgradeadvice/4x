@@ -34,6 +34,13 @@ Shouts
 
 	Thanks to the FoFiX team for all of their work and patience.
 
+Compiling
+	
+	Install Cython
+	cd \fofix\data\themes\4x
+	python setup.py build_ext
+	
+	Binary .pyd's are provided for Python 2.7 win32. You'll need to run the above command to compile for another platform.
 
 Optional
 
@@ -52,10 +59,8 @@ Optional
 4. Shader Tails (RB2 Mode)
 	
 	Copy the contents of optional/RB2 Mode to the root folder to enable shader tails. This will enable RB2 mode and disable starpower shaders.
+	
+License
 
-
-Misc
-
-	#TODO Shaders, Alternate color schemes
-
-	Source will be made available when FoFiX 4.0 gets a tagged release.
+	GNU GPL V2
+	See LICENSE for details.
