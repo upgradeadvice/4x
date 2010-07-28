@@ -1,1 +1,4 @@
 Thumbs.db
+*.pyc
+*.py
+build
