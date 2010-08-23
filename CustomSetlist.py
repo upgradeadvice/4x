@@ -2,7 +2,7 @@
 #####################################################################
 #                                                                   #
 # Frets on Fire X (FoFiX)                                           #
-# Copyright (C) 2006 Sami Kyöstilä                                  #
+# Copyright (C) 2006 Sami KyÃ¶stilÃ¤                                  #
 #               2008 myfingershurt                                  #
 #               2008 Blazingamer                                    #
 #               2008 evilynux <evilynux@gmail.com>                  #
