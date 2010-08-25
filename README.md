@@ -5,7 +5,7 @@ Dark fire is a branch of 4x that aims to recreate the Frets On Fire Fan Forum st
 
 [<img src="http://topclanz.net/blog/wp-content/uploads/2010/05/4x-dark-fire-ingame-9-150x150.jpg" alt="Dark Fire ingame-9" />](http://topclanz.net/blog/4x-fofix-4-0-theme/4x-dark-fire-ingame-9/)[<img src="http://topclanz.net/blog/wp-content/uploads/2010/05/4x-dark-fire-ingame-5-150x150.jpg" alt="Dark Fire ingame-5" />](http://topclanz.net/blog/4x-fofix-4-0-theme/4x-dark-fire-ingame-5/)[<img src="http://topclanz.net/blog/wp-content/uploads/2010/05/4x-dark-fire-ingame-4-150x150.jpg" alt="Dark Fire ingame-4" />](http://topclanz.net/blog/4x-fofix-4-0-theme/4x-dark-fire-ingame-4/)[<img src="http://topclanz.net/blog/wp-content/uploads/2010/05/4x-dark-fire-ingame-2-150x150.jpg" alt="Dark Fire ingame-2" />](http://topclanz.net/blog/4x-fofix-4-0-theme/4x-dark-fire-ingame-2/)
 
-To see Dark Fire in action, go to  <http://youtube.com/>
+To see Dark Fire in action, go to  <http://www.youtube.com/watch?v=LSKkAYGA9EY>
 
 
 ## About
