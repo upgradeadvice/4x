@@ -197,6 +197,9 @@ class CustomSetlist:
             font.render(text, (.05, .042 * (n + 1) + .15), scale=scale)
 
             if isinstance(item, Song.SongInfo):
+                score = _("Nil")
+                stars = 0
+                name = ""
                 if not item.getLocked():
                     try:
                         difficulties = \
@@ -233,8 +236,6 @@ class CustomSetlist:
                                 break
                             else:
                                 (score, stars, name) = (0, 0, '---')
-                    else:
-                        (score, stars, name) = (_('Nil'), 0, '---')
 
                     if score == _('Nil') and scene.nilShowNextScore:
                         for d in difficulties:
@@ -427,6 +428,9 @@ class CustomSetlist:
             font.render(text, (.053, .042 * (n + 1) + .15), scale=scale)
 
             if isinstance(item, Song.SongInfo):
+                score = _("Nil")
+                stars = 0
+                name = ""
                 if not item.getLocked():
                     try:
                         difficulties = \
@@ -463,8 +467,7 @@ class CustomSetlist:
                                 break
                             else:
                                 (score, stars, name) = (0, 0, '---')
-                    else:
-                        (score, stars, name) = (_('Nil'), 0, '---')
+
                     if score == _('Nil') and scene.nilShowNextScore:
                         for d in difficulties:
                             scores = item.getHighscores(d,
