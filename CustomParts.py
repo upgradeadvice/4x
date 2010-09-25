@@ -44,7 +44,7 @@ class CustomParts:
         self.partDiffControlScale = .0015
 
         self.partDiffGameModeAlign = LEFT
-        self.partDiffGameModeColor = Theme.hexToColor('#2891a6')
+        self.partDiffGameModeColor = Theme.hexToColor('#497A5D')
         self.partDiffGameModeFont = 'font'
         self.partDiffGameModePos = (-5, 0)
         self.partDiffGameModeScale = .0015
@@ -54,7 +54,7 @@ class CustomParts:
         self.partDiffKeyboardImgScale = .1
 
         self.partDiffOptionAlign = LEFT
-        self.partDiffOptionColor = Theme.hexToColor('#2891a6')
+        self.partDiffOptionColor = Theme.hexToColor('#497A5D')
         self.partDiffOptionFont = 'font'
         self.partDiffOptionPos = (0, 1)
         self.partDiffOptionScale = .0015
@@ -165,7 +165,7 @@ class CustomParts:
                         glColor3f(*self.partDiffSelectedColor)
                     else:
                         glColor3f(*self.partDiffOptionColor)
-                    font.render(str(dialog.parts[i][p]), (.09 * .5 * p
+                    font.render(unicode(dialog.parts[i][p]), (.09 * .5 * p
                                 + x, 1.295 * .46 + y + .07),
                                 scale=.001, align=0, new=True)
             elif dialog.mode[i] == 1:
@@ -183,7 +183,7 @@ class CustomParts:
                         glColor3f(*self.partDiffSelectedColor)
                     else:
                         glColor3f(*self.partDiffOptionColor)
-                    font.render(str(dialog.info.partDifficulties[dialog.players[i].part.id][d]),
+                    font.render(unicode(dialog.info.partDifficulties[dialog.players[i].part.id][d]),
                                 (.09 * .65 * d + x, 1.295 * .46 + y
                                 + .07), scale=.001, align=0, new=True)
 

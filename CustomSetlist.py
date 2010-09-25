@@ -25,15 +25,13 @@
 #####################################################################
 
 __author__ = "fuzion"
-__date__   = "$Aug 23, 2010 03:30:05 AM$"
+__date__   = "$Aug 23, 2010 02:28:05 AM$"
 
-import Song as Song
-from Theme import _
-
+import string
 from OpenGL.raw.GL import glColor3f
 from OpenGL.raw.GL import glColor4f
-import string
-
+import Song as Song
+from Theme import _
 
 class CustomSetlist:
 
@@ -115,7 +113,8 @@ class CustomSetlist:
             if scene.img_tier:
                 imgwidth = scene.img_tier.width1()
                 imgheight = scene.img_tier.height1()
-                wfactor = 0.02
+                wfactor = 381 / imgwidth
+                hfactor = 24.000 / imgheight
                 if isinstance(item, Song.TitleInfo) or isinstance(item,
                         Song.SortTitleInfo) and scene.img_tier:
                     scene.drawImage(scene.img_tier, scale=(wfactor,
@@ -127,31 +126,34 @@ class CustomSetlist:
                 if item.icon != '':
                     try:
                         icon = scene.itemIcons[item.icon]
-                        wfactor = 0.02
-                        scene.drawImage(icon, scale=(wfactor,
-                                -wfactor), coord=(w / 1.052, h - 0.055
-                                * h * (n + 1) - 0.20000000000000001
-                                * h), stretched = 11)
+                        imgwidth = icon.width1()
+                        wfactor = 14.000 / imgwidth
+                        scene.drawImage(icon, scale=(1,
+                                -1), coord=(w / 1.02, h - 0.0563
+                                * h * (n + 1) - 0.2
+                                * h))
                     except KeyError:
                         pass
             elif isinstance(item, Song.LibraryInfo):
                 try:
                     icon = scene.itemIcons['Library']
-                    wfactor = 0.02
-                    scene.drawImage(icon, scale=(wfactor, -wfactor),
-                                    coord=(w / 1.052, h - 0.055 * h
-                                    * (n + 1) - 0.20000000000000001
-                                    * h), stretched = 11)
+                    imgwidth = icon.width1()
+                    wfactor = 14.000 / imgwidth
+                    scene.drawImage(icon, scale=(1, -1),
+                                    coord=(w / 1.02, h - 0.0563 * h
+                                    * (n + 1) - 0.2
+                                    * h))
                 except KeyError:
                     pass
             elif isinstance(item, Song.RandomSongInfo):
                 try:
                     icon = scene.itemIcons['Random']
-                    wfactor = 0.02
-                    scene.drawImage(icon, scale=(wfactor, -wfactor),
-                                    coord=(w / 1.052, h - 0.055 * h
-                                    * (n + 1) - 0.20000000000000001
-                                    * h), stretched = 11)
+                    imgwidth = icon.width1()
+                    wfactor = 14.000 / imgwidth
+                    scene.drawImage(icon, scale=(1, -1),
+                                    coord=(w / 1.02, h - 0.0563 * h
+                                    * (n + 1) - 0.2
+                                    * h))
                 except KeyError:
                     pass
 
@@ -182,7 +184,7 @@ class CustomSetlist:
                     Song.SortTitleInfo):
                 text = string.upper(text)
 
-            scale = 0.00160001
+            scale = 0.00080000000000000004
             (wt, ht) = font.getStringSize(text, scale=scale)
 
             while wt > maxwidth:
@@ -192,7 +194,7 @@ class CustomSetlist:
                 if wt < .45:
                     break
 
-            font.render(text, (.40, .0413 * (n + 1) + .15), scale=scale)
+            font.render(text, (.05, .042 * (n + 1) + .15), scale=scale)
 
             if isinstance(item, Song.SongInfo):
                 score = _("Nil")
@@ -235,7 +237,7 @@ class CustomSetlist:
                             else:
                                 (score, stars, name) = (0, 0, '---')
 
-                    if score == _('Nil') and scene.nilShowNextScore:
+                    if score == _("Nil") and scene.nilShowNextScore:
                         for d in difficulties:
                             scores = item.getHighscores(d,
                                     part=scene.scorePart)
@@ -266,20 +268,20 @@ class CustomSetlist:
                             else:
                                 (score, stars, name) = (0, 0, '---')
                         else:
-                            (score, stars, name) = (_('Nil'), 0, '---')
+                            (score, stars, name) = (_("Nil"), 0, '---')
 
-                    scale = 0.0010
-                    if score is not _('Nil') and score > 0 \
+                    scale = 0.0007
+                    if score != _("Nil") and score > 0 \
                         and notesTotal != 0:
                         text = '%.1f%% (%d)' % (float(notesHit)
                                 / notesTotal * 100.0, noteStreak)
-                        font.render(text, (0.92000000000000003, .0413
-                                    * (n + 1) + .163), scale=scale,
+                        font.render(text, (0.93000000000000003, .042
+                                    * (n + 1) + .15), scale=scale,
                                     align=2)
 
-                    text = str(score)
+                    text = unicode(score)
 
-                    font.render(text, (0.92000000000000003, .0413 * (n
+                    font.render(text, (0.75000000000000003, .042 * (n
                                 + 1) + .15), scale=scale, align=2)
 
     def renderSelectedItem(self, scene, n):
@@ -308,22 +310,24 @@ class CustomSetlist:
             if scene.img_selected:
                 imgwidth = scene.img_selected.width1()
                 imgheight = scene.img_selected.height1()
-                wfactor = 0.03
+                wfactor = 381.5 / imgwidth
+                hfactor = 36.000 / imgheight
 
                 scene.drawImage(scene.img_selected, scale=(wfactor,
-                                -wfactor), coord=(w / 1.587, y * 1.2
-                                - h * .213), stretched = 11)
+                                -hfactor), coord=(w / 1.587, y * 1.2
+                                - h * .213))
 
             icon = None
             if isinstance(item, Song.SongInfo):
                 if item.icon != '':
                     try:
                         icon = scene.itemIcons[item.icon]
-                        wfactor = 0.03
-                        scene.drawImage(icon, scale=(wfactor,
-                                -wfactor), coord=(w / 1.052, h - 0.055
-                                * h * (n + 1) - 0.20000000000000001
-                                * h), stretched = 11)
+                        imgwidth = icon.width1()
+                        wfactor = 15.000 / imgwidth
+                        scene.drawImage(icon, scale=(1,
+                                -1), coord=(w / 1.02, h - 0.0563
+                                * h * (n + 1) - 0.2
+                                * h))
                     except KeyError:
                         pass
 
@@ -346,11 +350,12 @@ class CustomSetlist:
             elif isinstance(item, Song.LibraryInfo):
                 try:
                     icon = scene.itemIcons['Library']
-                    wfactor = 0.03
+                    imgwidth = icon.width1()
+                    wfactor = 15.000 / imgwidth
                     scene.drawImage(icon, scale=(wfactor, -wfactor),
-                                    coord=(w / 1.052, h - 0.055 * h
+                                    coord=(w / 1.02, h - 0.0563 * h
                                     * (n + 1) - 0.20000000000000001
-                                    * h), stretched = 11)
+                                    * h))
                 except KeyError:
                     pass
                 (c1, c2, c3) = self.library_selected_color
@@ -370,19 +375,20 @@ class CustomSetlist:
             elif isinstance(item, Song.RandomSongInfo):
                 try:
                     icon = scene.itemIcons['Random']
-                    wfactor = 0.03
-                    scene.drawImage(icon, scale=(wfactor, -wfactor),
-                                    coord=(w / 1.052, h - 0.055 * h
+                    imgwidth = icon.width1()
+                    wfactor = 15.000 / imgwidth
+                    scene.drawImage(icon, scale=(1, -1),
+                                    coord=(w / 1.02, h - 0.0563 * h
                                     * (n + 1) - 0.20000000000000001
-                                    * h), stretched = 11)
+                                    * h))
                 except KeyError:
                     pass
                 text = _('Random Song')
                 (c1, c2, c3) = self.career_title_color
                 glColor3f(c1, c2, c3)
 
-            font.render(text, (0.92000000000000003, .155),
-                        scale=0.00150001, align=2)
+            font.render(text, (0.93000000000000003, .169),
+                        scale=0.00080000000000000004, align=2)
 
             maxwidth = 0.20000000000000001
             if isinstance(item, Song.SongInfo) or isinstance(item,
@@ -409,7 +415,7 @@ class CustomSetlist:
                 maxwidth = 0.20000000000000001
                 text = string.upper(text)
 
-            scale = 0.00160001
+            scale = 0.00080000000000000004
             (wt, ht) = font.getStringSize(text, scale=scale)
 
             while wt > maxwidth:
@@ -419,7 +425,7 @@ class CustomSetlist:
                 if wt < .45:
                     break
 
-            font.render(text, (.40, .0413 * (n + 1) + .15), scale=scale)
+            font.render(text, (.053, .042 * (n + 1) + .15), scale=scale)
 
             if isinstance(item, Song.SongInfo):
                 score = _("Nil")
@@ -462,7 +468,7 @@ class CustomSetlist:
                             else:
                                 (score, stars, name) = (0, 0, '---')
 
-                    if score == _('Nil') and scene.nilShowNextScore:
+                    if score == _("Nil") and scene.nilShowNextScore:
                         for d in difficulties:
                             scores = item.getHighscores(d,
                                     part=scene.scorePart)
@@ -492,58 +498,22 @@ class CustomSetlist:
                             else:
                                 (score, stars, name) = (0, 0, '---')
                         else:
-                            (score, stars, name) = (_('Nil'), 0, '---')
+                            (score, stars, name) = (_("Nil"), 0, '---')
 
-                    scale = 0.0010
-                    if score is not _('Nil') and score > 0 \
+                    scale = 0.0007
+                    if score != _("Nil") and score > 0 \
                         and notesTotal != 0:
                         text = '%.1f%% (%d)' % (float(notesHit)
                                 / notesTotal * 100.0, noteStreak)
                         (w, h) = font.getStringSize(text, scale=scale)
-                        font.render(text, (0.92000000000000003, .0413
-                                    * (n + 1) + .163), scale=scale,
+                        font.render(text, (0.93000000000000003, .042
+                                    * (n + 1) + .15), scale=scale,
                                     align=2)
+                    text = unicode(score)
 
-                    text = str(score)
-
-                    font.render(text, (0.92000000000000003, .0413 * (n
+                    font.render(text, (0.75000000000000003, .042 * (n
                                 + 1) + .15), scale=scale, align=2)
-
-    def renderItem(
-        self,
-        scene,
-        color,
-        label,
-        ):
-        if not scene.itemMesh:
-            return
-
-    def renderLibrary(
-        self,
-        scene,
-        color,
-        label,
-        ):
-        if not scene.libraryMesh:
-            return
-
-    def renderTitle(
-        self,
-        scene,
-        color,
-        label,
-        ):
-        if not scene.tierMesh:
-            return
-
-    def renderRandom(
-        self,
-        scene,
-        color,
-        label,
-        ):
-        if not scene.itemMesh:
-            return
+                    height = 0.0
 
     def renderAlbumArt(self, scene):
         if not scene.itemLabels:
@@ -558,34 +528,35 @@ class CustomSetlist:
                 if scene.img_random_label:
                     img = scene.img_random_label
                     imgwidth = img.width1()
-                    wfactor = 60.000 / imgwidth
+                    wfactor = 150.000 / imgwidth
                 elif scene.img_empty_label:
                     img = scene.img_empty_label
                     imgwidth = img.width1()
-                    wfactor = 60.000 / imgwidth
+                    wfactor = 150.000 / imgwidth
             elif not scene.itemLabels[i]:
                 if scene.img_empty_label != None:
-                    imgwidth = scene.img_empty_label.width1() 
-                    wfactor = 60.000 / imgwidth
+                    imgwidth = scene.img_empty_label.width1()
+                    wfactor = 150.000 / imgwidth
                     img = scene.img_empty_label
             elif scene.itemLabels[i]:
                 img = scene.itemLabels[i]
-                wfactor = img.widthf(pixelw = 10.000)
+                imgwidth = img.width1()
+                wfactor = 150.000 / imgwidth
             if isinstance(item, Song.SongInfo) and item.getLocked():
                 if scene.img_locked_label:
                     imgwidth = scene.img_locked_label.width1()
-                    wfactor2 = 60.000 / imgwidth
+                    wfactor2 = 150.000 / imgwidth
                     lockImg = scene.img_locked_label
                 elif scene.img_empty_label:
                     imgwidth = scene.img_empty_label.width1()
-                    wfactor = 60.000 / imgwidth
+                    wfactor = 150.000 / imgwidth
                     img = scene.img_empty_label
             if img:
-                scene.drawImage(img, scale=(0.15, -0.15),
-                                coord=(.23 * w, .685 * h), stretched = 12)
+                scene.drawImage(img, scale=(wfactor, -wfactor),
+                                coord=(.078 * w, .902 * h))
             if lockImg:
                 scene.drawImage(lockImg, scale=(wfactor2, -wfactor2),
-                                coord=(.23 * w, .685 * h), stretched = 12)
+                                coord=(.078 * w, .902 * h))
 
     def renderForeground(self, scene):
         font = scene.fontDict['songListFont']
@@ -596,17 +567,17 @@ class CustomSetlist:
             (c1, c2, c3) = self.song_rb2_diff_color
             glColor3f(c1, c2, c3)
 
-            scale = 0.00160001
+            scale = 0.00080000000000000004
             text = _('BAND:')
-            font.render(text, (.08, .4665), scale=scale)
+            font.render(text, (.785, .035), scale=scale)
             text = _('GUITAR:')
-            font.render(text, (.08, .4867), scale=scale)
+            font.render(text, (.785, .055), scale=scale)
             text = _('DRUM:')
-            font.render(text, (.08, .5069), scale=scale)
+            font.render(text, (.785, .075), scale=scale)
             text = _('BASS:')
-            font.render(text, (.08, .5271), scale=scale)
+            font.render(text, (.785, .095), scale=scale)
             text = _('VOCALS:')
-            font.render(text, (.08, .5473), scale=scale)
+            font.render(text, (.785, .115), scale=scale)
 
             text = _('SORTING:') + '     '
             if scene.sortOrder == 0: 
@@ -642,11 +613,11 @@ class CustomSetlist:
             else:
                 text = text + _('BY SONG COLLECTION')
 
-            font.render(text, (.08, .155), scale=0.00150001)
+            font.render(text, (.04, .169), scale=0.00080000000000000004)
 
             if scene.songLoader:
                 font.render(_('Loading Preview...'), (.05, .7),
-                            scale=0.00150001)
+                            scale=0.00080000000000000004)
             return
         if scene.img_list_button_guide:
             scene.drawImage(scene.img_list_button_guide, scale=(.5,
@@ -669,48 +640,48 @@ class CustomSetlist:
                 if item.getLocked():
                     text = ''  
 
-                scale = 0.00160001
+                scale = 0.00080000000000000004
                 (wt, ht) = font.getStringSize(text, scale=scale)
 
-                while wt > .22:
+                while wt > .21:
                     tlength = len(text) - 4
                     text = text[:tlength] + '...'
                     (wt, ht) = font.getStringSize(text, scale=scale)
-                    if wt < .08:
+                    if wt < .22:
                         break
 
                 (c1, c2, c3) = self.artist_text_color
                 glColor3f(c1, c2, c3)
 
                 text = string.upper(text)
-                font.render(text, (.08, .33), scale=scale)
+                font.render(text, (.15, .03), scale=scale)
 
                 if scene.img_diff3 != None:
                     imgwidth = scene.img_diff3.width1()
 
-                    wfactor1 = 2.0 / imgwidth
+                    wfactor1 = 13.0 / imgwidth
 
                 albumtag = item.album
                 albumtag = string.upper(albumtag)
                 (wt, ht) = font.getStringSize(albumtag, scale=scale)
 
-                while wt > .22:
+                while wt > .21:
                     tlength = len(albumtag) - 4
                     albumtag = albumtag[:tlength] + '...'
                     (wt, ht) = font.getStringSize(albumtag, scale=scale)
-                    if wt < .08:
+                    if wt < .22:
                         break
 
-                font.render(albumtag, (.08, .35),
-                            scale=0.00150001)
+                font.render(albumtag, (.15, .05),
+                            scale=0.00080000000000000004)
 
                 genretag = item.genre
-                font.render(genretag, (.08, .37),
-                            scale=0.00150001)
+                font.render(genretag, (.15, .10),
+                            scale=0.00080000000000000004)
 
                 yeartag = item.year
-                font.render(yeartag, (.08, .39),
-                            scale=0.00150001)
+                font.render(yeartag, (.15, .12),
+                            scale=0.00080000000000000004)
 
                 for i in range(5):
                     glColor3f(1, 1, 1)
@@ -728,37 +699,37 @@ class CustomSetlist:
                         == None or scene.img_diff3 == None:
                         if diff == -1:
                             font.render(' ', (.3, .5585 + i * .025),
-                                    scale=0.00150001)
+                                    scale=0.00080000000000000004)
                         elif diff == 6:
                             glColor3f(1, 1, 0)
-                            font.render(str('*' * (diff - 1)), (.3,
+                            font.render(unicode('*' * (diff - 1)), (.3,
                                     0.5525 + i * .025),
-                                    scale=0.00150001)
+                                    scale=0.00080000000000000004)
                         else:
-                            font.render(str('*' * diff + ' ' * (5
+                            font.render(unicode('*' * diff + ' ' * (5
                                     - diff)), (.3, 0.5525 + i * .025),
-                                    scale=0.00150001)
+                                    scale=0.00080000000000000004)
                     else:
                         if diff == -1:
                             font.render(' ', (.3, .5585 + i * .025),
-                                    scale=0.00150001)
+                                    scale=0.00080000000000000004)
                         elif diff == 6:
                             for k in range(0, 5):
                                 scene.drawImage(scene.img_diff3,
-                                        scale=(wfactor1 * .1, -wfactor1
-                                        * .1), coord=((.25 + .03 * k)
-                                        * w, (0.38 - .028 * i) * h), stretched = 11)
+                                        scale=(wfactor1 * 1, -wfactor1
+                                        * 1), coord=((.85 + .03 * k)
+                                        * w, (0.955 - .028 * i) * h))
                         else:
                             for k in range(0, diff):
                                 scene.drawImage(scene.img_diff2,
-                                        scale=(wfactor1 * .1, -wfactor1
-                                        * .1), coord=((.25 + .03 * k)
-                                        * w, (0.38 - .028 * i) * h), stretched = 11)
+                                        scale=(wfactor1 * 1, -wfactor1
+                                        * 1), coord=((.85 + .03 * k)
+                                        * w, (0.955 - .028 * i) * h))
                             for k in range(0, 5 - diff):
                                 scene.drawImage(scene.img_diff1,
-                                        scale=(wfactor1 * .1, -wfactor1
-                                        * .1), coord=((.37 - .03 * k)
-                                        * w, (0.38 - .028 * i) * h), stretched = 11)
+                                        scale=(wfactor1 * 1, -wfactor1
+                                        * 1), coord=((.97 - .03 * k)
+                                        * w, (0.955 - .028 * i) * h))
 
     def renderMoreInfo(self, scene):
         if not scene.items:
@@ -790,30 +761,30 @@ class CustomSetlist:
                     text += ' by %s' % item.artist
                 if item.year != '':
                     text += ' (%s)' % item.year
-                scale = font.scaleText(text, .08,
-                        0.00160001)
-                font.render(text, (.08, .25 - y), scale=scale, align=1)
+                scale = font.scaleText(text, .22,
+                        0.00080000000000000004)
+                font.render(text, (.22, .25 - y), scale=scale, align=1)
                 if scene.itemLabels[i]:
                     imgwidth = scene.itemLabels[i].width1()
                     wfactor = 75.000 / imgwidth
                     scene.drawImage(scene.itemLabels[i], (wfactor,
-                                    -wfactor), (w * .375, h * .5 + yI), stretched = 11)
+                                    -wfactor), (w * .375, h * .5 + yI))
                 elif scene.img_empty_label:
                     imgwidth = scene.img_empty_label.width1()
                     wfactor = 75.000 / imgwidth
                     scene.drawImage(scene.img_empty_label, (wfactor,
-                                    -wfactor), (w * .375, h * .5 + yI), stretched = 11)
+                                    -wfactor), (w * .375, h * .5 + yI))
                 text = item.album
                 if text == '':
                     text = _('No Album')
                 scale = font.scaleText(text, 0.20000000000000001,
-                        0.00160001)
+                        0.00080000000000000004)
                 font.render(text, (.56, .305 - y), scale=scale)
                 text = item.genre
                 if text == '':
                     text = _('No Genre')
                 scale = font.scaleText(text, 0.20000000000000001,
-                        0.00160001)
+                        .00085)
                 font.render(text, (.56, .35 - y), scale=scale)
             elif scene.infoPage == 1:
                 r1 = (1.0 / 3.0, 2.0 / 3.0, .5, 1.0)
