@@ -269,7 +269,7 @@ class CustomSetlist:
                             (score, stars, name) = (_('Nil'), 0, '---')
 
                     scale = 0.0010
-                    if score is not _('Nil') and score > 0 \
+                    if score != _('Nil') and score > 0 \
                         and notesTotal != 0:
                         text = '%.1f%% (%d)' % (float(notesHit)
                                 / notesTotal * 100.0, noteStreak)
@@ -495,7 +495,7 @@ class CustomSetlist:
                             (score, stars, name) = (_('Nil'), 0, '---')
 
                     scale = 0.0010
-                    if score is not _('Nil') and score > 0 \
+                    if score != _('Nil') and score > 0 \
                         and notesTotal != 0:
                         text = '%.1f%% (%d)' % (float(notesHit)
                                 / notesTotal * 100.0, noteStreak)
