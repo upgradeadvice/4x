@@ -41,12 +41,6 @@ class CustomTheme(Theme):
 
         Theme.__init__(self, path, name)
         
-        self.povOriginX = 0
-        self.povOriginY = 2
-        self.povOriginZ = -3.5
-        self.povTargetX = 0
-        self.povTargetY = 1
-        self.povTargetZ = 3
         #new
         self.menuPos = [0.5,0.070000000000000007]
         self.povTarget  = (0.0, 1.0, 3.0)
