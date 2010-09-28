@@ -62,7 +62,7 @@ class CustomParts:
 
         self.partDiffPanelNameAlign = LEFT
         self.partDiffPanelNameFont = 'font'
-        self.partDiffPanelNamePos = (0, 0)
+        self.partDiffPanelNamePos = (-2, -2)
         self.partDiffPanelNameScale = .001
         self.partDiffPanelPos = (.05, .05)
         self.partDiffPanelSize = (.05, .1)
@@ -138,20 +138,20 @@ class CustomParts:
                     self.partDiffGameModePos,
                     scale=self.partDiffGameModeScale,
                     align=self.partDiffGameModeAlign)
-            controlFont.render(dialog.players[i].name,
-                               (self.partDiffPanelSize[0]
-                               * self.partDiffControlPos[0] + x,
-                               self.partDiffPanelSize[1]
-                               * self.partDiffControlPos[1] + y),
-                               scale=self.partDiffControlScale,
-                               align=self.partDiffControlAlign,
-                               new=True)
-            panelNameFont.render(dialog.players[i].name.lower(), (x + w
-                                 * self.partDiffPanelNamePos[0], y + h
-                                 * self.partDiffPanelNamePos[1]),
-                                 scale=self.partDiffPanelNameScale,
-                                 align=self.partDiffPanelNameAlign,
-                                 new=True)
+            # controlFont.render(dialog.players[i].name,
+                               # (self.partDiffPanelSize[0]
+                               # * self.partDiffControlPos[0] + x,
+                               # self.partDiffPanelSize[1]
+                               # * self.partDiffControlPos[1] + y),
+                               # scale=self.partDiffControlScale,
+                               # align=self.partDiffControlAlign,
+                               # new=True)
+            # panelNameFont.render(dialog.players[i].name.lower(), (x + w
+                                 # * self.partDiffPanelNamePos[0], y + h
+                                 # * self.partDiffPanelNamePos[1]),
+                                 # scale=self.partDiffPanelNameScale,
+                                 # align=self.partDiffPanelNameAlign,
+                                 # new=True)
             if dialog.mode[i] == 0:
                 self.drawPartImage(dialog,
                                    dialog.parts[i][dialog.selected[i]].id,
