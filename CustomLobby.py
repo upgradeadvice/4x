@@ -74,7 +74,7 @@ class CustomLobby:
         self.lobbyPanelSize = ( .15, .53 )
         self.lobbyPanelSpacing = .141
         self.lobbyPartPos = ( .5, .84 )
-        self.lobbyPartScale = 0.5
+        self.lobbyPartScale = .094
         self.lobbySaveCharAlign = CENTER
         self.lobbySaveCharColor = ( 0xff / 255, 0xcc / 255, 0x00 / 255 )
         self.lobbySaveCharFont = 'font'
@@ -111,36 +111,35 @@ class CustomLobby:
                         break
 
     def drawPartImage( 
-                      self,
-                      lobby,
-                      parttype,
-                      scale,
-                      coord,
-                      ):
-        self.partImagescolor = [1, 1, 1, 1]
+        self,
+        lobby,
+        parttype,
+        scale,
+        coord,
+        ):
         if not lobby.partImages[self.currentImage]:
             return
         if parttype in GUITARTYPES:
             if self.fadeTime < 1000 or self.nextImage \
                 == self.currentImage:
                 lobby.drawImage( lobby.partImages[self.currentImage],
-                                scale = scale, coord = coord )
+                                scale = scale, coord = coord, stretched = 11 )
             else:
                 lobby.drawImage( lobby.partImages[self.currentImage],
                                 scale = scale, coord = coord, color = ( 1, 1,
-                                1, ( 2500.0 - self.fadeTime ) / 1500.0 ) )
+                                1, ( 2500.0 - self.fadeTime ) / 1500.0 ), stretched = 11 )
                 lobby.drawImage( lobby.partImages[self.nextImage],
                                 scale = scale, coord = coord, color = ( 1, 1,
-                                1, ( self.fadeTime - 1000.0 ) / 1500.0 ) )
-                glColor4f( self.partImagescolor[0], self.partImagescolor[1], self.partImagescolor[2], self.partImagescolor[3] )
+                                1, ( self.fadeTime - 1000.0 ) / 1500.0 ), stretched = 11 )
+                glColor4f( 1, 1, 1, 1 )
         elif parttype in DRUMTYPES:
             if lobby.partImages[4]:
                 lobby.drawImage( lobby.partImages[4], scale = scale,
-                                coord = coord )
+                                coord = coord, stretched = 11 )
         else:
             if lobby.partImages[5]:
                 lobby.drawImage( lobby.partImages[5], scale = scale,
-                                coord = coord )
+                                coord = coord, stretched = 11 )
 
     def renderPanels( self, lobby ):
         x = self.lobbyPanelPos[0]
