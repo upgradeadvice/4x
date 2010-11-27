@@ -47,6 +47,7 @@ class CustomTheme( Theme ):
         self.povOrigin = ( 0.0, 2.0, -3.5 )
         self.countdownPosX = 0.5
         self.countdownPosY = 0.30
+        self.boardFade = 2
 
         artist_selected_color = '#ffffff'
         artist_text_color = '#2891a6'
