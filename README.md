@@ -1,5 +1,8 @@
 ## Envy
-    Envy is a very green branch of 4x. It has the same features as 4x, but with many new and updated elements.
+
+    Envy is a very green branch of 4x. It has the same features as 4x, but 
+    with many new and updated elements. 
+
 
 ## About 4x
 
@@ -13,6 +16,7 @@
 
 ## Features
 
+- FoFiX 4.0.0 Alpha Support <http://code.google.com/p/fofix/>
 - FoFiX 4.0-dev Support <http://github.com/stump/fofix>
 - Custom 3D Notes, Keys - Complete CustomLobby, CustomSetlist and more.
 - RB and GH elements   
@@ -24,7 +28,7 @@
 - GPL V2 License
 
 
-## About
+## Misc
 
 - http://topclanz.net/blog/
 - irc.oftc.net/#fofix
