@@ -11,11 +11,11 @@
 
 	You can see screenshots of the theme in action here:
 	http://topclanz.net/blog/4x-fofix-4-0-theme/
+    http://www.fretsonfire.net/forums/viewtopic.php?f=32&t=47434
 
 ## Notice
 
 	If you want a bug fixed, put it here: http://github.com/fuzion/4x/issues
-    4x currently works with FoFiX on Python 2.7. Other binary files may be provided upon request.
 
 ## Shouts
 
@@ -23,6 +23,7 @@
 
 ## Features
 
+- FoFiX 4.0.0 Alpha Support <http://code.google.com/p/fofix/>
 - FoFiX 4.0-dev Support <http://github.com/stump/fofix>
 - Custom 3D Notes, Keys - Complete CustomLobby, CustomSetlist and more.
 - RB and GH elements   
@@ -33,10 +34,9 @@
 - GPL V2 License
 
 ## Fonts
+    Alte Haas Grotesk by Yann Le Coroller - See FONTS.rtf for details.
 
-	See FONTS.rtf for details.
-
-# Misc
+## Misc
 
 - http://topclanz.net/blog/
 - irc.oftc.net/#fofix
