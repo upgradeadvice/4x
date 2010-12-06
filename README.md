@@ -1,5 +1,6 @@
-# Dark Fire
-Dark fire is a branch of 4x that aims to recreate the Frets On Fire Fan Forum stylesheet of the same name.
+## Dark Fire
+    Dark fire is a branch of 4x that aims to recreate the Frets On Fire Fan 
+    Forum stylesheet of the same name. 
 
 [<img src="http://topclanz.net/blog/wp-content/uploads/2010/05/4x-dark-fire-main-150x150.jpg" alt="Dark Fire Main Menu" />](http://topclanz.net/blog/4x-fofix-4-0-theme/4x-dark-fire-main/)[<img src="http://topclanz.net/blog/wp-content/uploads/2010/05/4x-dark-fire-lobby-150x150.jpg" alt="Dark Fire Lobby" />](http://topclanz.net/blog/4x-fofix-4-0-theme/4x-dark-fire-lobby/)[<img src="http://topclanz.net/blog/wp-content/uploads/2010/05/4x-dark-fire-setlist-150x150.jpg" alt="Dark Fire Setlist" />](http://topclanz.net/blog/4x-fofix-4-0-theme/4x-dark-fire-setlist/)[<img src="http://topclanz.net/blog/wp-content/uploads/2010/05/4x-dark-fire-gameresult-150x150.jpg" alt="Dark Fire Game Result" />](http://topclanz.net/blog/4x-fofix-4-0-theme/4x-dark-fire-gameresult/)
 
@@ -8,7 +9,7 @@ Dark fire is a branch of 4x that aims to recreate the Frets On Fire Fan Forum st
 To see Dark Fire in action, go to  <http://www.youtube.com/watch?v=LSKkAYGA9EY>
 
 
-## About
+## About 4x
 
 	4x aims to become the new baseline for FoFiX 4.0 theme releases. It's 
 	the first theme available that contains fully functional CustomTheme, 
@@ -20,6 +21,7 @@ To see Dark Fire in action, go to  <http://www.youtube.com/watch?v=LSKkAYGA9EY>
 
 ## Features
 
+- FoFiX 4.0.0 Alpha Support <http://code.google.com/p/fofix/>
 - FoFiX 4.0-dev Support <http://github.com/stump/fofix>
 - Custom 3D Notes, Keys - Complete CustomLobby, CustomSetlist and more.
 - RB and GH elements   
@@ -30,7 +32,7 @@ To see Dark Fire in action, go to  <http://www.youtube.com/watch?v=LSKkAYGA9EY>
 - GPL V2 License
 
 
-# About
+## Misc
 
 - http://topclanz.net/blog/
 - irc.oftc.net/#fofix
